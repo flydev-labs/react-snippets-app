@@ -6,7 +6,8 @@ class Snippet extends React.Component {
         const { details, index } = this.props;
         return (
             <li className="snippet-item">
-                <p>{ details.snippet }</p>
+                <h3>{ details.title }</h3>
+                <p>{ details.code }</p>
                 <button className="snippet-delete" onClick={() => this.props.removeSnippet(index)}>&times;</button>
             </li>
         );

@@ -4,10 +4,10 @@ class AddSnippetForm extends React.Component {
 
     createSnippet(event) {
         event.preventDefault();
-        console.log('Create snippet please ...');
         const snippet = {
-            snippet: this.snippet.value,
-        }
+            title: this.title.value,
+            code: this.code.value,
+        };
         this.props.addSnippet(snippet);
         this.snippetForm.reset();
     }
@@ -15,7 +15,8 @@ class AddSnippetForm extends React.Component {
     render() {
         return (
             <form ref={(input) => this.snippetForm = input} id="snippet-form" onSubmit={(e) => this.createSnippet(e)}>
-                <textarea ref={(input) => this.snippet = input} placeholder="Snippet code ..."></textarea>
+                <input ref={(input) => this.title = input} type="text" placeholder="Snippet title ..." />
+                <textarea ref={(input) => this.code = input} placeholder="Snippet code ..."></textarea>
                 <button type="submit">+ Save Snippet</button>
             </form>
         )
