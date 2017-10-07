@@ -13,8 +13,13 @@ class App extends React.Component {
 
     render() {
         return (
-            <div style={{ width:50+"%", margin:"20px auto" }}>
-                <AddSnippetForm addSnippet={this.addSnippet} />
+            <div className="container">
+                <div id="snippets-list">
+                    LIST
+                </div>
+                <div id="snippets-form">
+                    <AddSnippetForm addSnippet={this.addSnippet} />
+                </div>
             </div>
         )
     }

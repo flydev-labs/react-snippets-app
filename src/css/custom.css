@@ -1,0 +1,87 @@
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+#main {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    display: flex;
+    box-orient: horizontal;
+}
+
+#snippets-list {
+    width: 75%;
+    background: #00a99d;
+    text-align: center;
+    box-flex: 0;
+}
+
+#snippets-form {
+    width: 25%;
+    background: yellow;
+    text-align: center;
+    box-flex: 1;
+}
+
+
+
+
+
+
+
+
+#snippet-form {
+    width: 80%;
+    margin: 20px auto;
+    border: 2px solid #000;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+#snippet-form input,
+#snippet-form textarea,
+#snippet-form select {
+    width: 33.33%;
+    padding: 10px;
+    line-height: 1;
+    font-size: 1rem;
+    border: 0;
+    border-bottom: 1px solid #000;
+    border-right: 1px solid #000;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 0;
+    background: #fff;
+}
+
+#snippet-form input:focus,
+#snippet-form textarea:focus,
+#snippet-form select:focus {
+    outline: 0;
+    background: #fef2de;
+}
+
+#snippet-form textarea {
+    width: 100%;
+    height: 400px;
+}
+
+#snippet-form input:last-of-type {
+    width: 100%;
+}
+
+#snippet-form button {
+    width: 100%;
+    border: 0;
+}
