@@ -8,6 +8,7 @@ class App extends React.Component {
     constructor() {
         super();
         this.addSnippet = this.addSnippet.bind(this);
+        this.removeSnippet = this.removeSnippet.bind(this);
         this.state = {
             snippets: {},
         };
@@ -17,11 +18,14 @@ class App extends React.Component {
         return (
             <div className="container">
                 <div id="snippets-list">
-                    <ul className="list-of-fishes">
+                    <ul>
                     {
                         Object
                             .keys(this.state.snippets)
-                            .map(key => <Snippet key={key} index={key} details={this.state.snippets[key]} />)
+                            .map(key => <Snippet key={key} index={key}
+                                details={this.state.snippets[key]}
+                                removeSnippet={this.removeSnippet}
+                            />)
                     }
                   </ul>
                 </div>
@@ -39,6 +43,12 @@ class App extends React.Component {
         const timestamp = Date.now();
         snippets[`snippet-${timestamp}`] = snippet;
         // set state
+        this.setState({ snippets });
+    }
+
+    removeSnippet(key) {
+        const snippets = { ...this.state.snippets };
+        snippets[key] = null;
         this.setState({ snippets });
     }
 
