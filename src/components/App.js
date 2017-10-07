@@ -1,4 +1,5 @@
 import React from 'react';
+import base from '../firebase';
 import AddSnippetForm from './AddSnippetForm';
 import Snippet from './Snippet';
 
@@ -28,17 +29,25 @@ class App extends React.Component {
                     <AddSnippetForm addSnippet={this.addSnippet} />
                 </div>
             </div>
-        )
+        );
     }
 
     addSnippet(snippet) {
         // update our state
-        const snippets = {...this.state.snippets};
+        const snippets = { ...this.state.snippets };
         // add in our new fish
         const timestamp = Date.now();
         snippets[`snippet-${timestamp}`] = snippet;
         // set state
         this.setState({ snippets });
+    }
+
+    componentWillMount() {
+        // this runs right before the <App> is rendered
+        this.ref = base.syncState('theUserName/snippets', {
+            context: this,
+            state: 'snippets'
+        });
     }
 
 }
