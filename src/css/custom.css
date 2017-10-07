@@ -1,3 +1,4 @@
+// LAYOUT
 html,
 body {
     height: 100%;
@@ -29,13 +30,7 @@ body {
     box-flex: 1;
 }
 
-
-
-
-
-
-
-
+// FORM
 #snippet-form {
     width: 80%;
     margin: 20px auto;
@@ -84,4 +79,9 @@ body {
 #snippet-form button {
     width: 100%;
     border: 0;
+}
+
+// LIST
+#snippets-list li {
+    border: solid 1px red;
 }

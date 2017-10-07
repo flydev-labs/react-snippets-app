@@ -1,5 +1,6 @@
 import React from 'react';
 import AddSnippetForm from './AddSnippetForm';
+import Snippet from './Snippet';
 
 class App extends React.Component {
 
@@ -15,7 +16,13 @@ class App extends React.Component {
         return (
             <div className="container">
                 <div id="snippets-list">
-                    LIST
+                    <ul className="list-of-fishes">
+                    {
+                        Object
+                            .keys(this.state.snippets)
+                            .map(key => <Snippet key={key} index={key} details={this.state.snippets[key]} />)
+                    }
+                  </ul>
                 </div>
                 <div id="snippets-form">
                     <AddSnippetForm addSnippet={this.addSnippet} />
