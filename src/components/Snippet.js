@@ -1,4 +1,5 @@
 import React from 'react';
+import FontAwesome from 'react-fontawesome';
 import { confirmAlert } from 'react-confirm-alert';
 import 'react-confirm-alert/src/react-confirm-alert.css';
 
@@ -10,12 +11,19 @@ class Snippet extends React.Component {
             <li className="snippet-item">
                 <h3>{ details.title }</h3>
                 <pre>{ details.code }</pre>
-                <button className="snippet-delete" onClick={() => this.submit(index)}>&times;</button>
+                <div className="submit-actions">
+                    <button className="snippet-modify" onClick={() => this.submit(index)}>
+                        <FontAwesome name='pencil-square-o' />
+                    </button>
+                    <button className="snippet-delete" onClick={() => this.delete(index)}>
+                        <FontAwesome name='trash-o' />
+                    </button>
+                </div>
             </li>
         );
     }
 
-    submit(index) {
+    delete(index) {
         confirmAlert({
             title: 'Confirm snippet deletion',
             message: 'Are you sure that you want to permanently delete the selected snippet?',

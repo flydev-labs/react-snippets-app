@@ -91,7 +91,7 @@ body {
 
 #snippets-list li {
     margin: 10px auto;
-    padding:0 20px;
+    padding: 0 20px;
     border: solid 1px #777;
     background-color: #CCC;
     list-style: none;
@@ -109,8 +109,16 @@ body {
     font-family: 'Roboto Mono', monospace;
 }
 
-#snippets-list .snippet-delete {
+#snippets-list .submit-actions {
     position: absolute;
     top: 20px;
     right: 20px;
+}
+
+#snippets-list .submit-actions button {
+    width: 24px;
+    height: 24px;
+    margin-left: 5px;
+    padding: 0;
+    text-align: center;
 }
