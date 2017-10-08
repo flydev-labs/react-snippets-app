@@ -8,6 +8,7 @@ class App extends React.Component {
     constructor() {
         super();
         this.addSnippet = this.addSnippet.bind(this);
+        this.editSnippet = this.editSnippet.bind(this);
         this.removeSnippet = this.removeSnippet.bind(this);
         this.state = {
             snippets: {},
@@ -22,8 +23,11 @@ class App extends React.Component {
                     {
                         Object
                             .keys(this.state.snippets)
-                            .map(key => <Snippet key={key} index={key}
+                            .map(key => <Snippet
+                                key={key}
+                                index={key}
                                 details={this.state.snippets[key]}
+                                editSnippet={this.editSnippet}
                                 removeSnippet={this.removeSnippet}
                             />)
                     }
@@ -43,6 +47,12 @@ class App extends React.Component {
         const timestamp = Date.now();
         snippets[`snippet-${timestamp}`] = snippet;
         // set state
+        this.setState({ snippets });
+    }
+
+    editSnippet(key, field, data) {
+        const snippets = { ...this.state.snippets };
+        snippets[key][field] = data[field];
         this.setState({ snippets });
     }
 

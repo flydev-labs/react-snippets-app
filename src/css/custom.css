@@ -19,8 +19,10 @@ body {
 
 #snippets-list {
     width: 75%;
+    height:100%;
     background: #3E2723;
     box-flex: 0;
+    overflow-y: auto;
 }
 
 #snippets-form {
@@ -101,12 +103,40 @@ body {
     position: relative;
 }
 
+#snippets-list .snippet-title {
+    width: 80%;
+    margin: 20px 0;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
 #snippets-list .snippet-item pre {
     padding: 20px;
     text-align: left;
     border: solid 1px #AAA;
     background-color: #FFF;
     font-family: 'Roboto Mono', monospace;
+    white-space: normal;
+}
+
+#snippets-list .snippet-title input {
+    width: 100%;
+    padding: 5px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+}
+
+#snippets-list .snippet-code textarea {
+    width: 100%;
+    padding: 5px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 0.8rem;
+}
+
+#snippets-list .snippet-code span {
+    display: inline-block;
+    width: 100%;
+    min-height: 1em;
 }
 
 #snippets-list .submit-actions {
