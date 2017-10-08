@@ -15,11 +15,11 @@ class AddSnippetForm extends React.Component {
     render() {
         return (
             <form ref={(input) => this.snippetForm = input} id="snippet-form" onSubmit={(e) => this.createSnippet(e)}>
-                <input ref={(input) => this.title = input} type="text" placeholder="Snippet title ..." />
-                <textarea ref={(input) => this.code = input} placeholder="Snippet code ..."></textarea>
+                <input ref={(input) => this.title = input} type="text" placeholder="Snippet title ..." required="required" />
+                <textarea ref={(input) => this.code = input} placeholder="Snippet code ..." required="required"></textarea>
                 <button type="submit">+ Save Snippet</button>
             </form>
-        )
+        );
     }
 
 }
