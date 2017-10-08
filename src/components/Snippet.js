@@ -9,7 +9,7 @@ class Snippet extends React.Component {
         return (
             <li className="snippet-item">
                 <h3>{ details.title }</h3>
-                <p>{ details.code }</p>
+                <pre>{ details.code }</pre>
                 <button className="snippet-delete" onClick={() => this.submit(index)}>&times;</button>
             </li>
         );

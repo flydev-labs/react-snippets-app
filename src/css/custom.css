@@ -19,8 +19,7 @@ body {
 
 #snippets-list {
     width: 75%;
-    background: #00a99d;
-    text-align: center;
+    background: #3E2723;
     box-flex: 0;
 }
 
@@ -85,16 +84,33 @@ body {
 
 
 /* LIST */
+#snippets-list ul {
+    margin: 20px;
+    padding: 0;
+}
+
 #snippets-list li {
-    border: solid 1px red;
+    margin: 10px auto;
+    padding:0 20px;
+    border: solid 1px #777;
+    background-color: #CCC;
+    list-style: none;
 }
 
 #snippets-list .snippet-item {
     position: relative;
 }
 
+#snippets-list .snippet-item pre {
+    padding: 20px;
+    text-align: left;
+    border: solid 1px #AAA;
+    background-color: #FFF;
+    font-family: 'Roboto Mono', monospace;
+}
+
 #snippets-list .snippet-delete {
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 20px;
+    right: 20px;
 }
