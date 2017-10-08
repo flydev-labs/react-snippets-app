@@ -1,4 +1,6 @@
 import React from 'react';
+import { confirmAlert } from 'react-confirm-alert';
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 class Snippet extends React.Component {
 
@@ -8,10 +10,21 @@ class Snippet extends React.Component {
             <li className="snippet-item">
                 <h3>{ details.title }</h3>
                 <p>{ details.code }</p>
-                <button className="snippet-delete" onClick={() => this.props.removeSnippet(index)}>&times;</button>
+                <button className="snippet-delete" onClick={() => this.submit(index)}>&times;</button>
             </li>
         );
     }
+
+    submit(index) {
+        confirmAlert({
+            title: 'Confirm snippet deletion',
+            message: 'Are you sure that you want to permanently delete the selected snippet?',
+            confirmLabel: 'Confirm',
+            cancelLabel: 'Cancel',
+            onConfirm: () => this.props.removeSnippet(index),
+        });
+    }
+
 }
 
 // Fish.propTypes = {
