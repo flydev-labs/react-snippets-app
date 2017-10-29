@@ -1,10 +1,9 @@
 import Rebase from 're-base';
-import '../production.config.js';
 
 const firebase = Rebase.createClass({
-    apiKey: '',
-    authDomain: '',
-    databaseURL: '',
+    apiKey: 'AIzaSyC62NSkOzItMutVNsvFLfIffa57-NQEIa4',
+    authDomain: 'react-snippets-app.firebaseapp.com',
+    databaseURL: 'https://react-snippets-app.firebaseio.com',
 });
 
 export default firebase;
